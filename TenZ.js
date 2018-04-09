@@ -18,12 +18,15 @@ var dice = {
 function guess() {
     "use strict";
     g = document.getElementById("guess").value;
-    if (!(g == parseInt(g) && g > 0 && g < 7)) 
-    alert ("This input is invalid. Please see instructions for help."); else diceRoll();
-        }
+    if (!(!isNaN(g) && Number(g) > 0 && Number(g) < 7)) {
+        alert("This input is invalid. Please see instructions for help.");
+    } else {
+        diceRoll();
+    }
+}
 
 function setUpDice() {
-    'use strict';
+    "use strict";
     var x;
     for (x = 0; x < 10; x += 1) {
         diceArray.push(1);
@@ -38,7 +41,7 @@ function diceRoll() {
         diceArray = setUpDice();
     }
     for (x = 0; x < diceArray.length; x += 1) {
-        if (parseInt(diceArray[x]) !== parseInt(g)) {
+        if (parseInt(diceArray[x], 10) !== parseInt(g, 10)) {
             diceArray[x] = dice.roll();
             diceElem[x].value = diceArray[x];
 //            console.log(x + ' = ' + diceArray[x]);
@@ -46,24 +49,20 @@ function diceRoll() {
     }
     console.log(diceArray);
     document.getElementById("rolls").innerHTML =parseInt(document.getElementById("rolls").innerHTML) + 1;
-    Winner();
+    winner();
 }
 
 doRoll.addEventListener('click', guess);
 
-function Winner() {
+function winner() {
     'use strict';
-    var win = 1;
-    for (var x = 0; x < diceArray.length; x += 1){
-    if (diceArray[x] != g) 
-    win= 0;}
-    if (win ==1)
-        {
+    var win = 1,
+        x;
+    for (x = 0; x < diceArray.length; x += 1){
+        if (diceArray[x] != g) 
+            win = 0;
+    }
+    if (win === 1) {
         alert (" Congratulations! You've won! Click refresh to start a new game.");
-            
-        }
+    }
 }
-
-
-
-
