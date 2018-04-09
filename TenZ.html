@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Dice Examples</title>
+        <style>
+            .dice {
+                width: 30px;
+                height: 30px;
+                background-color: #ccc;
+                text-align: center;
+                border-radius: 5px;
+                border-width: thin;
+            }
+            .highlight {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Dice TenZ</h1>
+        </header>
+       	<h2>Instructions:</h2>	
+        <h3><div>Pick the number you want all of the dice to be then roll th dice. Try to get all ten dice to be the same number. You are welcome to change which number you are trying to connect. The browser will keep track of how many rolls it takes you to get there. </br>You may input numbers 1-6. You may only input one number at a time. </div>
+        <br><br>
+        <input id ="guess"></input>
+        <br><br>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <input type="text" class="dice" value="1" disabled>
+        <br><br>
+        <input id="doRoll" type="button" value="Roll them">
+    <br><br>    
+    <div>Rolls: <span id="rolls">0</span></div>
+        <script src="TenZ.js"></script>
+    </body>
+    
+</html>
