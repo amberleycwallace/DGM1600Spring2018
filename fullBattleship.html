@@ -7,173 +7,174 @@
     <link rel="stylesheet" type="text/css" href="fullBattleship.css"/>
 </head>
 <body onload="newGame()">
-	<h1> One Line Battleship Simulation</h1>
+	<h1> One Player Battleship Simulation</h1>
    	<h2>Instructions:</h2>	
-        <h3><div>There are 5 ships. One ship two spaces long, one three spaces, one four spaces, one five space and one six spaces. Hits will be marked with an 'X', misses will be marked with an 'O'. You have 50 guesses before you lose. </br>You may input letters A-J and numbers 1-10. You may only guess a number, letter combination once. </div>
-			<input id ="guess"></input>
-			<button onclick = "guess()">Submit</button>
+        <h3><div>There are 5 ships. One ship two spaces long, one three spaces, one four spaces, one five spaces and one six spaces. Hits will be marked with an 'X', misses will be marked with an 'O'. You have 50 guesses before you lose. </br>You may input letters A-J and numbers 0-9. You may only guess a number, letter combination once. </div>
+			<input id ="guessx" placeholder="A"></input>
+			<input id ="guessy" placeholder="0"></input>
+    <button onclick = "guess()">Submit</button>
    <body>
 <table cellpadding="0" cellspacing="0" border="1" width="100" height="100">
 
 <tr>
-<td width="10">&nbsp;</td>
-<td width="10">A</td>
-<td width="10">B</td>
-<td width="10">C</td>
-<td width="10">D</td>
-<td width="10">E</td>
-<td width="10">F</td>
-<td width="10">G</td>
-<td width="10">H</td>
-<td width="10">I</td>
-<td width="10">J</td>
+<td>&nbsp;</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td name = "00">&nbsp;</td>
+<td name = "10">&nbsp;</td>
+<td name = "20">&nbsp;</td>
+<td name = "30">&nbsp;</td>
+<td name = "40">&nbsp;</td>
+<td name = "50">&nbsp;</td>
+<td name = "60">&nbsp;</td>
+<td name = "70">&nbsp;</td>
+<td name = "80">&nbsp;</td>
+<td name = "90">&nbsp;</td>
 </tr>
 
 <tr>
 <td>1</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "01">&nbsp;</td>
+<td name = "11">&nbsp;</td>
+<td name = "21">&nbsp;</td>
+<td name = "31">&nbsp;</td>
+<td name = "41">&nbsp;</td>
+<td name = "51">&nbsp;</td>
+<td name = "61">&nbsp;</td>
+<td name = "71">&nbsp;</td>
+<td name = "81">&nbsp;</td>
+<td name = "91">&nbsp;</td>
 </tr>
 
 <tr>
 <td>2</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "02">&nbsp;</td>
+<td name = "12">&nbsp;</td>
+<td name = "22">&nbsp;</td>
+<td name = "32">&nbsp;</td>
+<td name = "42">&nbsp;</td>
+<td name = "52">&nbsp;</td>
+<td name = "62">&nbsp;</td>
+<td name = "72">&nbsp;</td>
+<td name = "82">&nbsp;</td>
+<td name = "92">&nbsp;</td>
 </tr>
 
 <tr>
 <td>3</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "03">&nbsp;</td>
+<td name = "13">&nbsp;</td>
+<td name = "23">&nbsp;</td>
+<td name = "33">&nbsp;</td>
+<td name = "43">&nbsp;</td>
+<td name = "53">&nbsp;</td>
+<td name = "63">&nbsp;</td>
+<td name = "73">&nbsp;</td>
+<td name = "83">&nbsp;</td>
+<td name = "93">&nbsp;</td>
 </tr>
 
 <tr>
 <td>4</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "04">&nbsp;</td>
+<td name = "14">&nbsp;</td>
+<td name = "24">&nbsp;</td>
+<td name = "34">&nbsp;</td>
+<td name = "44">&nbsp;</td>
+<td name = "54">&nbsp;</td>
+<td name = "64">&nbsp;</td>
+<td name = "74">&nbsp;</td>
+<td name = "84">&nbsp;</td>
+<td name = "94">&nbsp;</td>
 </tr>
 
 <tr>
 <td>5</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "05">&nbsp;</td>
+<td name = "15">&nbsp;</td>
+<td name = "25">&nbsp;</td>
+<td name = "35">&nbsp;</td>
+<td name = "45">&nbsp;</td>
+<td name = "55">&nbsp;</td>
+<td name = "65">&nbsp;</td>
+<td name = "75">&nbsp;</td>
+<td name = "85">&nbsp;</td>
+<td name = "95">&nbsp;</td>
 </tr>
 
 <tr>
 <td>6</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "06">&nbsp;</td>
+<td name = "16">&nbsp;</td>
+<td name = "26">&nbsp;</td>
+<td name = "36">&nbsp;</td>
+<td name = "46">&nbsp;</td>
+<td name = "56">&nbsp;</td>
+<td name = "66">&nbsp;</td>
+<td name = "76">&nbsp;</td>
+<td name = "86">&nbsp;</td>
+<td name = "96">&nbsp;</td>
 </tr>
 
 <tr>
 <td>7</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "07">&nbsp;</td>
+<td name = "17">&nbsp;</td>
+<td name = "27">&nbsp;</td>
+<td name = "37">&nbsp;</td>
+<td name = "47">&nbsp;</td>
+<td name = "57">&nbsp;</td>
+<td name = "67">&nbsp;</td>
+<td name = "77">&nbsp;</td>
+<td name = "87">&nbsp;</td>
+<td name = "97">&nbsp;</td>
 </tr>
 
 <tr>
 <td>8</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td name = "08">&nbsp;</td>
+<td name = "18">&nbsp;</td>
+<td name = "28">&nbsp;</td>
+<td name = "38">&nbsp;</td>
+<td name = "48">&nbsp;</td>
+<td name = "58">&nbsp;</td>
+<td name = "68">&nbsp;</td>
+<td name = "78">&nbsp;</td>
+<td name = "88">&nbsp;</td>
+<td name = "98">&nbsp;</td>
 </tr>
 
 <tr>
 <td>9</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-
-<tr>
-<td>10</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
+<td name = "09">&nbsp;</td>
+<td name = "19">&nbsp;</td>
+<td name = "29">&nbsp;</td>
+<td name = "39">&nbsp;</td>
+<td name = "49">&nbsp;</td>
+<td name = "59">&nbsp;</td>
+<td name = "69">&nbsp;</td>
+<td name = "79">&nbsp;</td>
+<td name = "89">&nbsp;</td>
+<td name = "99">&nbsp;</td></tr>
 
 </table>
 
 </table>
 		</br>
-		<div>Wins: <span id="wins">0</span></div>
+<div>Guesses: <span id="guess">0</span></div>		
+<div>Wins: <span id="wins">0</span></div>
 <div>Losses: <span id="losses">0</span></div></h3>
 	</body>
         
